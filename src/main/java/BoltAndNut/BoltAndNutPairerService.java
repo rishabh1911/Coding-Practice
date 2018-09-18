@@ -14,25 +14,26 @@ public class BoltAndNutPairerService implements NutAndBoltPairer {
 	 *              third list is list of unpaired bolts.
 	 */
 	public List<Object> pairNutAndBolts(List<Nut> nuts, List<Bolt> bolts) {
-		return pairNutAndBoltsUtil(nuts, bolts, null, null, null);
+		List<Nut> unpairedNuts = new LinkedList<Nut>();
+		List<Bolt> unpairedBolts = new LinkedList<Bolt>();
+		List<NutBoltPair> nutBoltPairs = new LinkedList<NutBoltPair>();
+		return pairNutAndBoltsUtil(nuts, bolts, unpairedNuts, unpairedBolts, nutBoltPairs);
 	}
 
 	private List<Object> pairNutAndBoltsUtil(List<Nut> nuts, List<Bolt> bolts, List<Nut> unpairedNut, List<Bolt> unpairedBolt, List<NutBoltPair> nutBoltPairs) {
 
-		List<Nut> smallerNuts = new LinkedList<>();
-		List<Nut> largerNuts = new LinkedList<>();
-		List<Bolt> smallerBolts = new LinkedList<>();
-		List<Bolt> largerBolts = new LinkedList<>();
-
 		//Base Case
 		if(bolts.size() == 0 || nuts.size() == 0) {
-			List<Object> result  = new LinkedList<>();
-			List<NutBoltPair> pair = new LinkedList<>();
-			result.add(pair);
-			result.add(nuts); 
-			result.add(bolts);
+			List<Object> result  = new LinkedList<Object>();
+			result.add(nutBoltPairs);
+			result.add(unpairedNut.addAll(nuts)); 
+			result.add(unpairedBolt.addAll(bolts));
 			return result;
 		}
+		List<Nut> smallerNuts = new LinkedList<Nut>();
+		List<Nut> largerNuts = new LinkedList<Nut>();
+		List<Bolt> smallerBolts = new LinkedList<Bolt>();
+		List<Bolt> largerBolts = new LinkedList<Bolt>();
 
 		Bolt pairedBolt = bolts.get(0);
 		Nut pairedNut = null;
@@ -56,7 +57,7 @@ public class BoltAndNutPairerService implements NutAndBoltPairer {
 		} else {
 			// The chosen bolt had no pair.
 			if(unpairedBolt == null)
-				unpairedBolt = new LinkedList<>();
+				unpairedBolt = new LinkedList<Bolt>();
 			unpairedBolt.add(pairedBolt);
 			bolts.remove(pairedBolt);
 			return pairNutAndBoltsUtil(nuts, bolts, unpairedNut, unpairedBolt, nutBoltPairs);
