@@ -81,5 +81,28 @@ public class Trie {
 		current.setTerminatingCharacter(true);
 	}
 	
+	/**
+	 * We can do that if a node has no children ahead, we can remove that.<br>
+	 * In that case useless nodes will not be present and Trie can be used for Prefix search also.<br>
+	 * This will reduce space used and prefix search will be faster but will make code complicated<br>
+	 * 
+	 * Better option for prefix search if we go ahead with this implementation then, after going to last node of prefix we can check 
+	 * id this node or any other subnodes from this is terminating node.
+	 * @param word
+	 */
+	public void removeWord(String word) {
+		TrieNode current  = root;
+		for(int i=0; i<word.length(); i++) {
+			current = current.next( word.charAt(i) );
+			if(current == null) // word is not present.
+				return;
+		}
+		current.setTerminatingCharacter(false);
+	}
+	
+	public void updateWord(String oldWord, String newWord) {
+		removeWord(oldWord);
+		addWord(newWord);
+	}
 }
 

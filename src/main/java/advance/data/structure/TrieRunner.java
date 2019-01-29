@@ -17,15 +17,28 @@ public class TrieRunner {
 		
 		dictionary.stream().forEach( word -> trie.addWord(word));
 		
+		
+		System.out.println("All output should be true");
+		System.out.println("-------------------------------------");
 		System.out.println(  trie.isWordPresent(dictionary.get(0)));
 		System.out.println(  trie.isWordPresent(dictionary.get(1)));
 		System.out.println(  trie.isWordPresent(dictionary.get(2)));
 		System.out.println(  trie.isWordPresent(dictionary.get(3)));
 		System.out.println(  trie.isWordPresent(dictionary.get(4)));
 		
-		System.out.println("------------------------");
-		System.out.println(  trie.isWordPresent("papaya"));
-		System.out.println(  trie.isWordPresent("ap"));
+		System.out.println("-------------------------------------");
+		System.out.println( !trie.isWordPresent("papaya"));
+		System.out.println(  !trie.isWordPresent("ap"));
+		
+		trie.removeWord(dictionary.get(1));
+		trie.removeWord(dictionary.get(2));
+		trie.updateWord(dictionary.get(3), "papaya");
+		
+		System.out.println("-------------------------------------");
+		System.out.println(  !trie.isWordPresent(dictionary.get(1)));
+		System.out.println(  !trie.isWordPresent(dictionary.get(2)));
+		System.out.println(  !trie.isWordPresent(dictionary.get(3)));
+		System.out.println(  trie.isWordPresent("papaya"));	
 
 	}
 
