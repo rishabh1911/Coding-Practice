@@ -1,4 +1,4 @@
-package advance.data.structure;
+package advance.data.structure.Trie;
 
 /**
  * A Trie node. It has 2 members.<br> 

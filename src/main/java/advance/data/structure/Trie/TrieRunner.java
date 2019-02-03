@@ -1,4 +1,4 @@
-package advance.data.structure;
+package advance.data.structure.Trie;
 
 import java.util.ArrayList;
 
