@@ -12,6 +12,6 @@ It contains code for small but important topics which I wrote for practice.
  
  * [Vending Machine](https://github.com/rishabh1911/Coding-Practice/tree/master/src/main/resources/advance/machine/coding/vending/machine) [Solution](https://github.com/rishabh1911/Coding-Practice/tree/master/src/main/java/machine/coding/vending/machine)
  
- ### BackTracking
+ ## BackTracking
  
  * [Sudoku](https://github.com/rishabh1911/Coding-Practice/blob/master/src/main/java/BackTracking/SudoKuSolve.java)
