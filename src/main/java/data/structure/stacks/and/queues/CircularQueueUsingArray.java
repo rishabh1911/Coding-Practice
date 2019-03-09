@@ -1,5 +1,11 @@
 package data.structure.stacks.and.queues;
 
+/**
+ * It is very easy to implement a circular queue using linked list.
+ * But using array it is complicated as can be seen below.
+ * @author Rishabh Agarwal
+ *
+ */
 public class CircularQueueUsingArray {
 	
 	int head = -1;
