@@ -21,9 +21,7 @@ class HeapElement implements Comparable<HeapElement> {
 /** Question: find kth Largest element in a heap in O(klogk) time.
  * 
  *   Simplest way is to extract k elements but it will take O(klogn) time. 
- *   Can we do it in O(n) ?
- *   O(n) solution will be faster when k is comparable to n.
- *   
+ *    
  *   We know that root is the largest element.
  *   After that 2nd largest is one of its children.
  *   Now 3rd largest is the other element of any children of chosen element.
