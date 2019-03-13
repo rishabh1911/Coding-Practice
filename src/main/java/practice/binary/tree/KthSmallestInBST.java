@@ -37,7 +37,7 @@ class Solution1 {
  * 				When number of left elements equal k-1 	
  * 				return the node, else return Integer.MAX_VALUE 
  * 			(Best could be return so that even Integer.MAX_VALUE can be in out tree)
- * 				Thus takes only O(1) extra space in O(n) time
+ * 				Thus takes only O(1)+O(logn) extra space in O(n) time
  * 				
  */
 class Solution2 {

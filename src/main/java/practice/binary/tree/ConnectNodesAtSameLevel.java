@@ -1,45 +1,70 @@
 package practice.binary.tree;
 // Question: https://www.geeksforgeeks.org/connect-nodes-at-same-level-with-o1-extra-space/
-// Practice: https://practice.geeksforgeeks.org/problems/connect-nodes-at-same-level/1
+// Practice: https://www.interviewbit.com/problems/populate-next-right-pointers-tree/
 public class ConnectNodesAtSameLevel {
 
 }
 
-class GfG
-{
-    void connect(Node root)
-    {
-        connect(root, null);
-    }
+/**
+ * Definition for binary tree with next pointer.
+ * public class TreeLinkNode {
+ *     int val;
+ *     TreeLinkNode left, right, next;
+ *     TreeLinkNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
     
-    void connect(Node root, Node rightNode) {
-        if(root == null) return;
-        
-        root.nextRight = rightNode;
-        Node rightMostNode = null;
-        if(root.left != null) {
-            if(root.right != null) {
-                connect(root.left, root.right);
-                rightMostNode = root.right;
-            } else {
-                rightMostNode = root.left;
-            }
-        } else {
-            rightMostNode = root.right;
+    TreeLinkNode getNextRightChild(TreeLinkNode node)  
+    { 
+        TreeLinkNode temp = node.next; 
+        while (temp != null)  
+        { 
+            if (temp.left != null) 
+                return temp.left; 
+            if (temp.right != null) 
+                return temp.right; 
+            temp = temp.next; 
         }
-        connect(rightMostNode, getLeftMostChild(rightNode));
+        // If all the nodes at p's level are leaf nodes then return NULL 
+        return null; 
     }
     
-    Node getLeftMostChild(Node root) {
-        if(root == null) return null;
-        if(root.left != null) return root.left;
-        return root.right;
-    } 
-}
-
-class Node {
-	int val;
-	Node left;
-	Node right;
-	Node nextRight;
+    private void connectRight(TreeLinkNode root) {
+        if( root == null ) return;
+        root.next = null;
+        TreeLinkNode node = root;
+        while(node != null) {
+            TreeLinkNode temp = node;
+            /* Connect all nodes at level lower than p */
+            while (temp != null)  
+            { 
+                // Set the nextRight pointer for temp's left child 
+                if (temp.left != null)  
+                { 
+                    if (temp.right != null) 
+                        temp.left.next = temp.right; 
+                    else
+                        temp.left.next = getNextRightChild(temp); 
+                } 
+                // Set the nextRight pointer for temp's right child 
+                if (temp.right != null) 
+                    temp.right.next = getNextRightChild(temp); 
+                temp = temp.next; 
+            }
+            // start from the first node of next level 
+            if (node.left != null) 
+                node = node.left; 
+            else if (node.right != null) 
+                node = node.right; 
+            else
+                node = getNextRightChild(node); 
+        }
+        return;
+    }
+    
+    
+    public void connect(TreeLinkNode root) {
+        connectRight(root);
+    }
 }
