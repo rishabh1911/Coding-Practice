@@ -1,4 +1,4 @@
-package advance.data.structure.Heap;
+package advance.data.structure.heap;
 
 /**
  * It is a unstable sort -> same key can have their position changed wrt original array.

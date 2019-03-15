@@ -1,19 +1,15 @@
 package practice.binary.tree;
 // Question: https://www.geeksforgeeks.org/connect-nodes-at-same-level-with-o1-extra-space/
 // Practice: https://www.interviewbit.com/problems/populate-next-right-pointers-tree/
+
+
+ class TreeLinkNode {
+      int val;
+      TreeLinkNode left, right, next;
+      TreeLinkNode(int x) { val = x; }
+ }
+
 public class ConnectNodesAtSameLevel {
-
-}
-
-/**
- * Definition for binary tree with next pointer.
- * public class TreeLinkNode {
- *     int val;
- *     TreeLinkNode left, right, next;
- *     TreeLinkNode(int x) { val = x; }
- * }
- */
-public class Solution {
     
     TreeLinkNode getNextRightChild(TreeLinkNode node)  
     { 

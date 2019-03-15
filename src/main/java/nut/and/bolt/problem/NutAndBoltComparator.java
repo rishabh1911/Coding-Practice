@@ -1,4 +1,4 @@
-package BoltAndNut;
+package nut.and.bolt.problem;
 
 public final class NutAndBoltComparator {
 	

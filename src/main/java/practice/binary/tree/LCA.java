@@ -2,8 +2,6 @@ package practice.binary.tree;
 
 import java.util.ArrayList;
 
-public class LCA {}
-
 // Question from https://www.interviewbit.com/problems/least-common-ancestor/
 class TreeNode {
 	int val;
@@ -16,7 +14,7 @@ class TreeNode {
 	}
 }
 
- class Solution {
+ public class LCA {
 
 	ArrayList<TreeNode> pathA;
 	ArrayList<TreeNode> pathB;

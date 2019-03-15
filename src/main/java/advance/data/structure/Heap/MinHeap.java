@@ -1,4 +1,4 @@
-package advance.data.structure.Heap;
+package advance.data.structure.heap;
 
 import java.util.Arrays;
 

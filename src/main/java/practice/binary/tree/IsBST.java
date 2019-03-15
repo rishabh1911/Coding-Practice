@@ -1,4 +1,18 @@
-class IsBST
+package practice.binary.tree;
+
+class Node {
+	int data;
+	Node left;
+	Node right;
+	
+	Node(int data) {
+		this.data = data;
+		left = right = null;
+	}
+}
+
+
+public class IsBST
 {
     private int isBstUtil(Node root, int greaterThan, int smallerThan) {
         if( root == null ) return 1;
