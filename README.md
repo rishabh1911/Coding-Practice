@@ -13,6 +13,8 @@ It contains code for small but important topics which I wrote for practice.
    * [Heap Sort](https://github.com/rishabh1911/Coding-Practice/blob/master/src/main/java/advance/data/structure/Heap/HeapSort.java)
    * [kth Largest in a heap](https://github.com/rishabh1911/Coding-Practice/blob/master/src/main/java/advance/data/structure/Heap/Kth_Largest_in_Heap.java)
  * [Nut and Bolt Problem](https://github.com/rishabh1911/Coding-Practice/tree/master/src/main/java/BoltAndNut)
+ * [AVL Tree implementation](https://github.com/rishabh1911/Coding-Practice/tree/master/src/main/java/advance/data/structure/avl/tree)
+ 
  
  
  ## Machine Coding
